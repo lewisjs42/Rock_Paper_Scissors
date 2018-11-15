@@ -4,63 +4,44 @@
 	<meta charset="utf-8">
 	<title>Rock Paper Scissors</title>
 </head>
-  <style>
-  </style>
+	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-  
-  <script>  
-	function game () {
-  
-		function computerPlay() {
-			let computerSelection = ['Rock', 'Paper', 'Scissors'];
-			return computerSelection[Math.floor(Math.random() * computerSelection.length)];
-		}
-		
-		function playRound (playerSelection, computerSelection) {
 
-			if (playerSelection.toUpperCase() == computerSelection.toUpperCase()) {
-				return (playerSelection + ' ties with ' + computerSelection + '.');
-				
-			} else if (playerSelection.toUpperCase() == 'ROCK' && computerSelection == 'Scissors'){
-				player_score ++;
-				return ("You Win! Rock beats Scissors.");
-				
-			} else if (playerSelection.toUpperCase() == 'PAPER' && computerSelection == 'Rock') {
-				player_score ++;
-				return ("You Win! Paper beats Rock.");
-				
-			} else if (playerSelection.toUpperCase() == 'SCISSORS' && computerSelection == 'Paper') {
-				player_score ++;
-				return ("You Win! Scissors beats Paper.");
-				
-			} else {
-				computer_score ++;
-				return ("You Lose! " + computerSelection + " beats " + playerSelection + ".");
-			}
+	<script>
+		let user;
+		function choose(choice){
+		user = choice;
 		}
-		
-		const playerSelection = prompt("Pick: Rock, Paper, Scissors");
-		const computerSelection = computerPlay();
-		
-		console.clear();
-		console.log(playRound(playerSelection, computerSelection));
-		console.log('Player: ' + player_score);
-		console.log('Computer: ' + computer_score);
-	}
-	
-	let player_score = 0;
-	let computer_score = 0;
-	
-	for (i = 0; i < 5; i++){
-		game();
-	}
-	
-	if (player_score > computer_score) {
-		console.log("You won the match!");
-	}	else {
-		console.log("You lost the match!");
-	}
-  </script>
+
+		function test(click){
+		alert("You chose " + user);
+		}
+	</script>
+
+  <!-- <script src="game.js"></script> -->
+			<div id="center">
+				<h1>Round 1</h1>
+				<p>Rock ties with rock.</p>
+				<button onClick="test()">DEBUG</button></li>
+			</div>
+
+			<div id="container">
+				<div id="player">
+					<div id="player_rock" onClick="choose('rock')"></div>
+					<div id="player_paper" onClick="choose('paper')"></div>
+					<div id="player_scissors" onClick="choose('scissors')"></div>
+					<p>You</p>
+					<p>Score: 0</p>
+				</div>
+				
+				<div id="computer">
+					<div id="computer_rock"></div>
+					<div id="computer_paper"></div>
+					<div id="computer_scissors"></div>
+					<p>Computer</p>
+					<p>Score: 0</p>
+				</div>
+			</div>
 </body>
 </html>
