@@ -8,31 +8,21 @@
 </head>
 <body>
 
-	<script>
-		let user;
-		function choose(choice){
-		user = choice;
-		}
+	<script src="game.js"></script>
 
-		function test(click){
-		alert("You chose " + user);
-		}
-	</script>
-
-  <!-- <script src="game.js"></script> -->
 			<div id="center">
-				<h1>Round 1</h1>
-				<p>Rock ties with rock.</p>
-				<button onClick="test()">DEBUG</button></li>
+				<h1 id="h1">Round 1</h1>
+				<p id="p_round">Choose your weapon to start.</p>
+				<a href=# id="game_reset" onclick="gameReset()"></a>
 			</div>
 
 			<div id="container">
 				<div id="player">
-					<div id="player_rock" onClick="choose('rock')"></div>
-					<div id="player_paper" onClick="choose('paper')"></div>
-					<div id="player_scissors" onClick="choose('scissors')"></div>
+					<div id="player_rock" onClick="selectRock()"></div>
+					<div id="player_paper" onClick="selectPaper()"></div>
+					<div id="player_scissors" onClick="selectScissors()"></div>
 					<p>You</p>
-					<p>Score: 0</p>
+					<p id="player_score">Score: 0</p>
 				</div>
 				
 				<div id="computer">
@@ -40,7 +30,7 @@
 					<div id="computer_paper"></div>
 					<div id="computer_scissors"></div>
 					<p>Computer</p>
-					<p>Score: 0</p>
+					<p id="computer_score">Score: 0</p>
 				</div>
 			</div>
 </body>
