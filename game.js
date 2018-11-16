@@ -9,6 +9,22 @@ function game() {
 		//Decides the winner of the round; updates the round and score.
 		function playRound (playerSelection, computerSelection) {
 
+			//Displays computer's selection on the GUI.
+				if (computerSelection == 'Rock') {
+					document.getElementById("computer_rock").style.backgroundImage = "url('./selected/computer_rock.png')";
+					document.getElementById("computer_paper").style.backgroundImage = "url('./unselected/computer_paper.png')";
+					document.getElementById("computer_scissors").style.backgroundImage = "url('./unselected/computer_scissors.png')";
+				} else if (computerSelection =='Paper') {
+					document.getElementById("computer_rock").style.backgroundImage = "url('./unselected/computer_rock.png')";
+					document.getElementById("computer_paper").style.backgroundImage = "url('./selected/computer_paper.png')";
+					document.getElementById("computer_scissors").style.backgroundImage = "url('./unselected/computer_scissors.png')";
+				} else if (computerSelection == 'Scissors') {
+					document.getElementById("computer_rock").style.backgroundImage = "url('./unselected/computer_rock.png')";
+					document.getElementById("computer_paper").style.backgroundImage = "url('./unselected/computer_paper.png')";
+					document.getElementById("computer_scissors").style.backgroundImage = "url('./selected/computer_scissors.png')";
+				}	
+	
+		
 			if (playerSelection.toUpperCase() == computerSelection.toUpperCase()) {
 				round ++;
 				document.getElementById("h1").innerHTML = "Round " + round;
@@ -63,23 +79,6 @@ let round = 1;
 let selection = "Rock";
 let player_score = 0;
 let computer_score = 0;
-
-//Displays computer's selection on the GUI.
-//function computerShowSelection() {
-//	if (computerSelection = 'Rock') {
-//		document.getElementById("computer_rock").style.backgroundImage = "url('./selected/computer_rock.png')";
-//		document.getElementById("computer_paper").style.backgroundImage = "url('./unselected/computer_paper.png')";
-//		document.getElementById("computer_scissors").style.backgroundImage = "url('./unselected/computer_scissors.png')";
-//	} else if (computerSelection = 'Paper') {
-//		document.getElementById("computer_rock").style.backgroundImage = "url('./unselected/computer_rock.png')";
-//		document.getElementById("computer_paper").style.backgroundImage = "url('./selected/computer_paper.png')";
-//		document.getElementById("computer_scissors").style.backgroundImage = "url('./unselected/computer_scissors.png')";
-//	} else if (computerSelection = 'Scissors') {
-//		document.getElementById("computer_rock").style.backgroundImage = "url('./unselected/computer_rock.png')";
-//		document.getElementById("computer_paper").style.backgroundImage = "url('./unselected/computer_paper.png')";
-//		document.getElementById("computer_scissors").style.backgroundImage = "url('./selected/computer_scissors.png')";
-//	}
-//}
 
 function gameStart() {
 	if (round <5) {

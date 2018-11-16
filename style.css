@@ -5,6 +5,12 @@
 	text-align: center;
 }
 
+#game_reset {
+		color: black;
+		text-decoration: underline;
+		font-size: 100%;
+}
+
 #container {
 	margin-top: 2%;
 }
@@ -70,14 +76,17 @@ button {
 
 #player_rock:hover {
 	background-image: url('./selected/player_rock.png');
+	cursor: pointer;
 }
 
 #player_paper:hover {
 	background-image: url('./selected/player_paper.png');
+	cursor: pointer;
 }
 
 #player_scissors:hover {
 	background-image: url('./selected/player_scissors.png');
+	cursor: pointer;
 }
 
 /* Computer Hands */
