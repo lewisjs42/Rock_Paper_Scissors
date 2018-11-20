@@ -1,3 +1,3 @@
-# Rock, Paper, Scissors for The Odin Project
+# Rock, Paper, Scissors
 
-To play the game, use your web browsers console.
+From The Odin Project's [curriculum](https://www.theodinproject.com/courses/web-development-101/lessons/rock-paper-scissors).

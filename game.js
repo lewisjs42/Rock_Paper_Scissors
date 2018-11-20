@@ -1,6 +1,6 @@
 function game() {
   
-		//Picks randomly for the computer. Moved the function outside of game function.
+		//Picks randomly for the computer.
 		function computerPlay() {
 			let computerSelection = ['Rock', 'Paper', 'Scissors'];	
 			return computerSelection[Math.floor(Math.random() * computerSelection.length)];
@@ -9,7 +9,7 @@ function game() {
 		//Decides the winner of the round; updates the round and score.
 		function playRound (playerSelection, computerSelection) {
 
-			//Displays computer's selection on the GUI.
+			//Updates the image for the computer's selection on the GUI.
 				if (computerSelection == 'Rock') {
 					document.getElementById("computer_rock").style.backgroundImage = "url('./selected/computer_rock.png')";
 					document.getElementById("computer_paper").style.backgroundImage = "url('./unselected/computer_paper.png')";
@@ -80,6 +80,7 @@ let selection = "Rock";
 let player_score = 0;
 let computer_score = 0;
 
+//Runs the game for 5 rounds and announces the outcome of the match.
 function gameStart() {
 	if (round <5) {
 		game();
@@ -113,10 +114,10 @@ function gameReset() {
 	document.getElementById("h1").innerHTML = "Round 1";
 }
 
+//Functions for allowing the player to select their weapon.
 function selectRock() {
 	selection = "Rock";
 	gameStart();
-	
 }
 	
 function selectPaper() {
@@ -129,6 +130,7 @@ function selectScissors() {
 	gameStart();
 }
 	
+//Logs the browser console if the player won, or lost the match.
 if (player_score > computer_score) {
 	console.log("You won the match!");
 }	else {
